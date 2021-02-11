@@ -9,7 +9,7 @@ export const RecetasContext = createContext()
 const RecetasProvider = (props) => {
 
     //crear el state del Context
-    const [recetas, guardarRecetas] = useState({})
+    const [recetas, guardarRecetas] = useState([])
     const [busqueda, buscarRecetas] = useState({
         nombre: '',
         categoria: ''
@@ -40,6 +40,7 @@ const RecetasProvider = (props) => {
     return (
         <RecetasContext.Provider
             value={{
+                recetas,
                 buscarRecetas,
                 guardarConsultar
             }}>
